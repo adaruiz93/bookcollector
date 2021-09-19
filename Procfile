@@ -1,1 +1,1 @@
-web: gunicorn bookcollector.wsgi.
+web: gunicorn bookcollector.wsgi
