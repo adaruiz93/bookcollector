@@ -20,7 +20,7 @@ class Author(models.Model):
 
 class Book(models.Model):
     name = models.CharField(max_length=100)
-    description = models.TextField(max_length=250)
+    description = models.TextField(max_length=1000)
     genre = models.CharField(max_length=100)
     authors = models.ManyToManyField(Author)
     user = models.ForeignKey(User, on_delete=models.CASCADE)

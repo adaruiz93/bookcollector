@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Book Details</h1>
+<h1>{{ book.name }}</h1>
 
 <div class="card">
   <div class="card-content">
@@ -13,12 +13,12 @@
 <div class="card-action">
   <span class="waves-effect waves-light btn-small white"><a href="{% url 'books_update' book.id %}">Edit</a></span>
   <span class="waves-effect waves-light btn-small white"> <a href="{% url 'books_delete' book.id %}">Delete</a></span>
- </div>
+</div>
  <div class="row">
  <div class="col s6">
- {% for photo in book.photo_set.all %}
-      <img class="responsive-img card-panel" src="{{photo.url}}">
-  {% empty %}
+   {% for photo in book.photo_set.all %}
+    <img class="responsive-img card-panel" src="{{photo.url}}">
+    {% empty %}
     <div class="card-panel teal-text center-align">No Photos Uploaded</div>
   {% endfor %}
 <form action="{% url 'add_photo' book.id %}" enctype="multipart/form-data" method="POST" class="card-panel">

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>Author List</h1>
+    <h1 class="teal-text text-darken-2">Authors</h1>
     {% for author in author_list%}
         <a href="{% url 'authors_detail' author.id %}">
         <div class="card">

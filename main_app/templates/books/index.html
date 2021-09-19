@@ -1,19 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<center><h1>Book List</h1></center>
-
+<center><h2 class="teal-text text-darken-2">My Books</h2></center>
+<hr/>
 {% for book in books %}
-  <div class="card">
-    <a href="{% url 'detail' book.id %}">
-    <div class="card-content">
-      <span class="card-title teal-text text-darken-2">{{ book.name }}</span>
-      <div class="pink-text text-darken-2">
-      <p>Description: {{ book.description }}</p>
-      <p>Genre: {{ book.genre }}</p>
+<div class="col s12 m7">
+  <h3 class="header teal-text text-darken-3">{{ book.name }}</h3>
+  <div class="card horizontal">
+    <div class="card-image">
+      {% for photo in book.photo_set.all %}
+       <img class="responsive-img card-panel" src="{{photo.url}}">
+       {% empty %}
+     {% endfor %}
+    </div>
+    <div class="card-stacked">
+      <div class="card-content">
+        <p>Description: {{ book.description }}</p>
+        <br>
+        <p>Genre: {{ book.genre }}</p>
+      </div>
+      <div class="card-action">
+        <a href="{% url 'detail' book.id %}" class="teal-text text-darken-3">{{ book.name }}</a>
       </div>
     </div>
   </div>
+</div>
 {% endfor %}
 {% endblock %}
-</a>

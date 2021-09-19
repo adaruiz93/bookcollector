@@ -10,6 +10,14 @@
   <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap" rel="stylesheet">
+   <style>
+   h1, h2, h3, h4, p, a, ul, li, div {
+   font-family: 'Comfortaa', cursive;
+   }
+   </style>
 </head>
 <body class="teal lighten-5">
   <header class="navbar-fixed">
@@ -22,9 +30,9 @@
           <li><a href="{% url 'about' %}">About</a></li>
           {% if user.is_authenticated %}
           <li><a href="{% url 'authors_create' %}">Add an Author</a></li>
-          <li><a href="{% url 'authors_list' %}">View all Authors</a></li>
+          <li><a href="{% url 'authors_list' %}">View Authors</a></li>
           <li><a href="{% url 'books_create' %}">Add a Book</a></li>
-          <li><a href="{% url 'index' %}">View All My Books</a></li>
+          <li><a href="{% url 'index' %}">My Books</a></li>
           <li><a href="{% url 'logout' %}">Log Out</a></li>
           {% else %}
           <li><a href="{% url 'signup' %}">Sign Up</a></li>
