@@ -1,1 +1,1 @@
-WSGI_APPLICATION = 'bookcollector.wsgi.application'
+web: gunicornbookcollector.wsgi.
